@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sala - Rocket.q</title>
+
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="room" class="content">
+      <header>
+        <a href="/ ">
+          <img src="/assets/logo.svg" alt="Rocket.q logo" />
+        </a>
+        <div>
+          <div class="tooltip">
+            <button
+              class="button outlined"
+              id="room-id"
+              data-id="<%= roomId %>"
+              onclick="myFunction()"
+              onmouseout="outFunc()"
+            >
+              #<%= roomId %>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.6667 7.5H9.16667C8.24619 7.5 7.5 8.24619 7.5 9.16667V16.6667C7.5 17.5871 8.24619 18.3333 9.16667 18.3333H16.6667C17.5871 18.3333 18.3333 17.5871 18.3333 16.6667V9.16667C18.3333 8.24619 17.5871 7.5 16.6667 7.5Z"
+                  stroke="#3485FF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.1665 12.5H3.33317C2.89114 12.5 2.46722 12.3244 2.15466 12.0118C1.8421 11.6993 1.6665 11.2754 1.6665 10.8333V3.33332C1.6665 2.8913 1.8421 2.46737 2.15466 2.15481C2.46722 1.84225 2.89114 1.66666 3.33317 1.66666H10.8332C11.2752 1.66666 11.6991 1.84225 12.0117 2.15481C12.3242 2.46737 12.4998 2.8913 12.4998 3.33332V4.16666"
+                  stroke="#3485FF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="clipboard"
+              class="sr-only"
+              value="<%= roomId %>"
+            />
+            <span class="tooltiptext" id="myTooltip">Copiar código</span>
+
+            <script>
+              function myFunction() {
+                var copyText = document.getElementById('clipboard')
+                copyText.select()
+                copyText.setSelectionRange(0, 99999)
+                navigator.clipboard.writeText(copyText.value)
+
+                var tooltip = document.getElementById('myTooltip')
+                tooltip.innerHTML = 'Copiado: ' + copyText.value
+              }
+
+              function outFunc() {
+                var tooltip = document.getElementById('myTooltip')
+                tooltip.innerHTML = 'Copiar código'
+              }
+            </script>
+          </div>
+          <a class="create button" href="/create-room">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_10924_435)">
+                <path
+                  d="M14.1668 17.5001V15.8334C14.1668 14.9494 13.8156 14.1015 13.1905 13.4764C12.5654 12.8513 11.7176 12.5001 10.8335 12.5001H4.16683C3.28277 12.5001 2.43493 12.8513 1.80981 13.4764C1.18469 14.1015 0.833496 14.9494 0.833496 15.8334V17.5001"
+                  stroke="#FAFAFA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.49984 9.16674C9.34079 9.16674 10.8332 7.67436 10.8332 5.83341C10.8332 3.99246 9.34079 2.50008 7.49984 2.50008C5.65889 2.50008 4.1665 3.99246 4.1665 5.83341C4.1665 7.67436 5.65889 9.16674 7.49984 9.16674Z"
+                  stroke="#FAFAFA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M19.1665 17.5001V15.8334C19.166 15.0949 18.9201 14.3774 18.4676 13.7937C18.0152 13.21 17.3816 12.7931 16.6665 12.6084"
+                  stroke="#FAFAFA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.3335 2.60841C14.0505 2.792 14.686 3.209 15.1399 3.79367C15.5937 4.37835 15.84 5.09744 15.84 5.83758C15.84 6.57772 15.5937 7.29681 15.1399 7.88149C14.686 8.46616 14.0505 8.88316 13.3335 9.06675"
+                  stroke="#FAFAFA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_10924_435">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            criar sala
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section id="question-id">
+            <h3>Faça sua pergunta</h3>
+            <form action="/question/create/<%= roomId %>" method="POST">
+              <label class="sr-only" for="textarea"
+                >O que você quer perguntar?</label
+              >
+              <textarea
+                type="text"
+                name="textarea"
+                id="textarea"
+                placeholder="O que você quer perguntar?"
+              ></textarea>
+              <div>
+                <span
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9999 6.66665H14.1666V4.99998C14.1666 2.69998 12.2999 0.833313 9.99992 0.833313C7.69992 0.833313 5.83325 2.69998 5.83325 4.99998V6.66665H4.99992C4.08325 6.66665 3.33325 7.41665 3.33325 8.33331V16.6666C3.33325 17.5833 4.08325 18.3333 4.99992 18.3333H14.9999C15.9166 18.3333 16.6666 17.5833 16.6666 16.6666V8.33331C16.6666 7.41665 15.9166 6.66665 14.9999 6.66665ZM9.99992 14.1666C9.08325 14.1666 8.33325 13.4166 8.33325 12.5C8.33325 11.5833 9.08325 10.8333 9.99992 10.8333C10.9166 10.8333 11.6666 11.5833 11.6666 12.5C11.6666 13.4166 10.9166 14.1666 9.99992 14.1666ZM12.5833 6.66665H7.41658V4.99998C7.41658 3.57498 8.57492 2.41665 9.99992 2.41665C11.4249 2.41665 12.5833 3.57498 12.5833 4.99998V6.66665Z"
+                      fill="#A5B0C1"
+                    />
+                  </svg>
+                  Esta pergunta é anônima</span
+                >
+                <button>Enviar</button>
+              </div>
+            </form>
+          </section>
+
+          <section id="questions">
+            <h2 class="sr-only">Perguntas da comunidade</h2>
+            <div class="questions">
+              <% if (isNoQuestion) { %> <%- include('parts/noquestion')%> <% }
+              %> <% questions.forEach(question => { %>
+
+              <div class="question-wrapper">
+                <span
+                  ><svg
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="26" cy="26" r="26" fill="#3485FF" />
+                    <path
+                      d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35"
+                      stroke="#FAFAFA"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z"
+                      stroke="#FAFAFA"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <p><%= question.title %></p>
+                </span>
+                <div class="actions">
+                  <a href="#" class="check" data-id="<%= question.id %>">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 6L9 17L4 12"
+                        stroke="#3485FF"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    Marcar como lida</a
+                  >
+                  <a href="#" class="delete" data-id="<%= question.id %>">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 6H5H21"
+                        stroke="#E83F5B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z"
+                        stroke="#E83F5B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    Excluir</a
+                  >
+                </div>
+              </div>
+
+              <% }) %> <% questionsRead.forEach(questionRead => { %>
+
+              <div class="question-wrapper read">
+                <span
+                  ><svg
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="26" cy="26" r="26" fill="#3485FF" />
+                    <path
+                      d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35"
+                      stroke="#FAFAFA"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z"
+                      stroke="#FAFAFA"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <p><%= questionRead.title %></p>
+                </span>
+                <div class="actions">
+                  <a href="#" class="delete" data-id="<%= questionRead.id %>">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 6H5H21"
+                        stroke="#E83F5B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z"
+                        stroke="#E83F5B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    excluir</a
+                  >
+                </div>
+              </div>
+
+              <% }) %>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-wrapper">
+      <div class="modal">
+        <h2>Excluir pergunta</h2>
+        <p>Tem certeza que você deseja excluir esta pergunta?</p>
+        <form action="" method="POST">
+          <label for="password" class="sr-only">Insira sua senha</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Insira sua senha"
+          />
+          <div class="buttons">
+            <div class="button">Cancelar</div>
+            <button class="">Sim, excluir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/main.js" defer type="module"></script>
+  </body>
+</html>
